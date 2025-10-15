@@ -13,10 +13,34 @@ export const BreathingText = ({ phase, counter, currentCycle }: BreathingTextPro
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Fade out before changing text
-    setIsVisible(false);
+    // Only fade at beginning and end of each phase
+    const isPhaseChange = 
+      (phase === "inhale" && (counter === 4 || counter === 1)) ||
+      (phase === "hold" && (counter === 7 || counter === 1)) ||
+      (phase === "exhale" && (counter === 8 || counter === 1));
     
-    const timer = setTimeout(() => {
+    if (isPhaseChange) {
+      setIsVisible(false);
+      
+      const timer = setTimeout(() => {
+        if (phase === "inhale") {
+          if (counter >= 3) {
+            setText("Breathe in");
+          } else {
+            setText("A little more");
+          }
+        } else if (phase === "hold") {
+          setText("Hold");
+        } else if (phase === "exhale") {
+          setText("Now, exhale");
+        }
+        
+        setIsVisible(true);
+      }, 300);
+
+      return () => clearTimeout(timer);
+    } else {
+      // Update text without fade
       if (phase === "inhale") {
         if (counter >= 3) {
           setText("Breathe in");
@@ -28,19 +52,14 @@ export const BreathingText = ({ phase, counter, currentCycle }: BreathingTextPro
       } else if (phase === "exhale") {
         setText("Now, exhale");
       }
-      
-      // Fade in with new text
-      setIsVisible(true);
-    }, 300);
-
-    return () => clearTimeout(timer);
+    }
   }, [phase, counter]);
 
   return (
     <div className="flex flex-col items-center gap-2">
       {/* Counter */}
       <div 
-        className={`font-cormorant text-4xl mb-4 transition-opacity duration-300 ${
+        className={`font-jakarta text-[10px] mb-4 transition-opacity duration-300 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -57,7 +76,7 @@ export const BreathingText = ({ phase, counter, currentCycle }: BreathingTextPro
       </div>
       
       {/* Cycle counter */}
-      <div className="font-cormorant text-[10px] text-muted-foreground mt-8 opacity-60">
+      <div className="font-jakarta text-[10px] text-muted-foreground mt-8 opacity-60">
         Cycle {currentCycle} of 4
       </div>
     </div>

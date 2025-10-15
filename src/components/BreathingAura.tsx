@@ -27,7 +27,7 @@ export const BreathingAura = ({ phase, counter }: BreathingAuraProps) => {
 
   // Transition durations based on phase
   const transitionDuration = 
-    phase === "inhale" ? "4s" : 
+    phase === "inhale" ? "6s" : // Slower inhale animation
     phase === "hold" ? "0.5s" : 
     "8s";
 
