@@ -8,7 +8,7 @@ interface CompletionPromptProps {
 export const CompletionPrompt = ({ onRestart, onFinish }: CompletionPromptProps) => {
   return (
     <div className="flex flex-col items-center gap-6 animate-fade-in">
-      <h2 className="font-jakarta font-light text-2xl text-foreground text-center px-8">
+      <h2 className="font-cormorant text-[30px] text-foreground text-center px-8">
         How are you feeling now?
       </h2>
       
@@ -16,15 +16,15 @@ export const CompletionPrompt = ({ onRestart, onFinish }: CompletionPromptProps)
         <Button
           onClick={onFinish}
           variant="secondary"
-          className="w-full font-jakarta text-base py-6 rounded-full"
+          className="w-full font-cormorant text-base py-6 rounded-full"
         >
           I'm feeling good
         </Button>
         
         <Button
           onClick={onRestart}
-          variant="outline"
-          className="w-full font-jakarta text-base py-6 rounded-full border-2 bg-accent hover:bg-accent/90"
+          variant="default"
+          className="w-full font-cormorant text-base py-6 rounded-full bg-accent hover:bg-accent/90 border-0"
         >
           I'm not quite ready yet
         </Button>

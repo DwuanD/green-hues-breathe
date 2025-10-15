@@ -22,14 +22,14 @@ const Index = () => {
   const startBreathing = () => {
     setAppState("breathing");
     setPhase("inhale");
-    setCounter(1);
+    setCounter(4);
     setCurrentCycle(1);
   };
 
   const resetBreathing = () => {
     setAppState("breathing");
     setPhase("inhale");
-    setCounter(1);
+    setCounter(4);
     setCurrentCycle(1);
   };
 
@@ -39,11 +39,11 @@ const Index = () => {
     let timer: NodeJS.Timeout;
 
     if (phase === "inhale") {
-      // Count up during inhale
+      // Count down during inhale
       const interval = setInterval(() => {
         setCounter((prev) => {
-          if (prev >= 4) return 4;
-          return prev + 1;
+          if (prev <= 1) return 1;
+          return prev - 1;
         });
       }, 1000);
 
@@ -51,7 +51,7 @@ const Index = () => {
       timer = setTimeout(() => {
         clearInterval(interval);
         setPhase("hold");
-        setCounter(1);
+        setCounter(7);
       }, INHALE_DURATION);
 
       return () => {
@@ -59,11 +59,11 @@ const Index = () => {
         clearTimeout(timer);
       };
     } else if (phase === "hold") {
-      // Count up during hold
+      // Count down during hold
       const interval = setInterval(() => {
         setCounter((prev) => {
-          if (prev >= 7) return 7;
-          return prev + 1;
+          if (prev <= 1) return 1;
+          return prev - 1;
         });
       }, 1000);
 
@@ -71,7 +71,7 @@ const Index = () => {
       timer = setTimeout(() => {
         clearInterval(interval);
         setPhase("exhale");
-        setCounter(1);
+        setCounter(8);
       }, HOLD_DURATION);
 
       return () => {
@@ -79,11 +79,11 @@ const Index = () => {
         clearTimeout(timer);
       };
     } else if (phase === "exhale") {
-      // Count up during exhale
+      // Count down during exhale
       const interval = setInterval(() => {
         setCounter((prev) => {
-          if (prev >= 8) return 8;
-          return prev + 1;
+          if (prev <= 1) return 1;
+          return prev - 1;
         });
       }, 1000);
 
@@ -98,7 +98,7 @@ const Index = () => {
           // Start next cycle
           setCurrentCycle((prev) => prev + 1);
           setPhase("inhale");
-          setCounter(1);
+          setCounter(4);
         }
       }, EXHALE_DURATION);
 
@@ -118,13 +118,13 @@ const Index = () => {
       <div className="relative z-10 w-full h-screen flex flex-col items-center justify-center">
         {appState === "welcome" && (
           <div className="flex flex-col items-center gap-8 animate-fade-in">
-            <h1 className="font-jakarta font-light text-2xl text-foreground text-center px-8 max-w-md">
+            <h1 className="font-cormorant text-[30px] text-foreground text-center px-8 max-w-md">
               You're safe here, just breathe with me
             </h1>
             <Button
               onClick={startBreathing}
               variant="secondary"
-              className="px-12 py-6 text-base font-jakarta rounded-full"
+              className="px-12 py-6 text-base font-cormorant rounded-full"
             >
               Begin
             </Button>
