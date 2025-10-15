@@ -7,7 +7,7 @@ interface CompletionPromptProps {
 
 export const CompletionPrompt = ({ onRestart, onFinish }: CompletionPromptProps) => {
   return (
-    <div className="flex flex-col items-center gap-6 animate-fade-in">
+    <div className="flex flex-col items-center gap-6">
       <h2 className="font-cormorant text-[30px] text-foreground text-center px-8">
         How are you feeling now?
       </h2>

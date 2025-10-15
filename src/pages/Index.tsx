@@ -117,7 +117,7 @@ const Index = () => {
       {/* Content */}
       <div className="relative z-10 w-full h-screen flex flex-col items-center justify-center">
         {appState === "welcome" && (
-          <div className="flex flex-col items-center gap-8 animate-fade-in">
+          <div className="flex flex-col items-center gap-8">
             <h1 className="font-cormorant text-[25px] text-foreground text-center px-8 max-w-md">
               You're safe here, just breathe with me
             </h1>

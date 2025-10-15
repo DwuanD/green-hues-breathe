@@ -1,6 +1,6 @@
 export const FinalMessage = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 animate-fade-in px-8">
+    <div className="flex flex-col items-center justify-center gap-4 px-8">
       <p className="font-cormorant text-[25px] text-foreground text-center leading-relaxed">
         I'm very proud of you.
       </p>
