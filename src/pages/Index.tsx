@@ -129,10 +129,7 @@ const Index = () => {
             >
               Begin
             </Button>
-            <div className="flex flex-col items-center gap-2 mt-16">
-              <img src={huuLogo} alt="HUU" className="w-24 h-24 object-contain" />
-              <p className="font-jakarta text-xs text-foreground/70">Design by Duan</p>
-            </div>
+            <img src={huuLogo} alt="HUU" className="w-24 h-24 object-contain mt-16" />
           </div>
         )}
 
