@@ -4,6 +4,7 @@ import { BreathingAura } from "@/components/BreathingAura";
 import { BreathingText } from "@/components/BreathingText";
 import { CompletionPrompt } from "@/components/CompletionPrompt";
 import { FinalMessage } from "@/components/FinalMessage";
+import huuLogo from "@/assets/huu-logo.png";
 
 type AppState = "welcome" | "breathing" | "completion" | "finished";
 type BreathPhase = "inhale" | "hold" | "exhale";
@@ -112,13 +113,13 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-gradient-radial overflow-hidden relative flex items-center justify-center">
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background to-background/80 backdrop-blur-[15px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background to-background/80 backdrop-blur-[40px]" />
 
       {/* Content */}
       <div className="relative z-10 w-full h-screen flex flex-col items-center justify-center">
         {appState === "welcome" && (
           <div className="flex flex-col items-center gap-8">
-            <h1 className="font-cormorant text-[25px] text-foreground text-center px-8 max-w-md">
+            <h1 className="font-cormorant text-[20px] text-foreground text-center px-8 max-w-md">
               You're safe here, just breathe with me
             </h1>
             <Button
@@ -128,6 +129,7 @@ const Index = () => {
             >
               Begin
             </Button>
+            <img src={huuLogo} alt="HUU" className="w-24 h-24 object-contain mt-8" />
           </div>
         )}
 
