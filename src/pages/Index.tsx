@@ -112,7 +112,7 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-gradient-radial overflow-hidden relative flex items-center justify-center">
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background to-background/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background to-background/80 backdrop-blur-[15px]" />
 
       {/* Content */}
       <div className="relative z-10 w-full h-screen flex flex-col items-center justify-center">
