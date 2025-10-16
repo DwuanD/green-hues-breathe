@@ -4,7 +4,7 @@ import { BreathingAura } from "@/components/BreathingAura";
 import { BreathingText } from "@/components/BreathingText";
 import { CompletionPrompt } from "@/components/CompletionPrompt";
 import { FinalMessage } from "@/components/FinalMessage";
-import huuLogo from "@/assets/huu-logo.png";
+import huuLogo from "@/assets/huu-logo.svg";
 
 type AppState = "welcome" | "breathing" | "completion" | "finished";
 type BreathPhase = "inhale" | "hold" | "exhale";

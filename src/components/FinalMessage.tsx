@@ -1,4 +1,4 @@
-import huuLogo from "@/assets/huu-logo.png";
+import huuLogo from "@/assets/huu-logo.svg";
 
 export const FinalMessage = () => {
   return (

@@ -13,11 +13,7 @@ export const BreathingText = ({ phase, counter, currentCycle }: BreathingTextPro
 
   useEffect(() => {
     if (phase === "inhale") {
-      if (counter >= 3) {
-        setText("Breathe in");
-      } else {
-        setText("A little more");
-      }
+      setText("Breathe in");
     } else if (phase === "hold") {
       setText("Hold");
     } else if (phase === "exhale") {
