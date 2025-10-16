@@ -18,7 +18,7 @@ export const CompletionPrompt = ({ onRestart, onFinish }: CompletionPromptProps)
           variant="secondary"
           className="w-full font-cormorant text-base py-6 rounded-full"
         >
-          I'm feeling good
+          I'm feeling better
         </Button>
         
         <Button
