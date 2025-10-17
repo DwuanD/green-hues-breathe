@@ -131,9 +131,6 @@ const Index = () => {
             </Button>
           </div>
         )}
-        
-        {/* Fixed logo at bottom center */}
-        <img src={huuLogo} alt="HUU" className="fixed bottom-8 left-1/2 -translate-x-1/2 w-24 h-24 object-contain z-30" />
 
         {appState === "breathing" && (
           <>
@@ -156,6 +153,11 @@ const Index = () => {
         )}
 
         {appState === "finished" && <FinalMessage />}
+        
+        {/* Fixed logo at bottom center - only show on welcome and finished states */}
+        {(appState === "welcome" || appState === "finished") && (
+          <img src={huuLogo} alt="HUU" className="fixed bottom-8 left-1/2 -translate-x-1/2 w-24 h-24 object-contain z-30" />
+        )}
       </div>
     </main>
   );
