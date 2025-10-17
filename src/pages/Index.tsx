@@ -119,7 +119,7 @@ const Index = () => {
       <div className="relative z-10 w-full h-full flex items-center justify-center px-4">
         {appState === "welcome" && (
           <div className="flex flex-col items-center justify-center gap-8">
-            <h1 className="font-cormorant text-[20px] text-foreground text-center px-8 max-w-md">
+            <h1 className="font-cormorant text-[20px] text-foreground text-center px-8 whitespace-nowrap">
               You're safe here, just breathe with me
             </h1>
             <Button
