@@ -111,12 +111,12 @@ const Index = () => {
   }, [appState, phase, currentCycle]);
 
   return (
-    <main className="min-h-screen bg-gradient-radial overflow-hidden relative flex items-center justify-center">
+    <main className="h-screen bg-gradient-radial overflow-hidden relative flex items-center justify-center">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background to-background/80 backdrop-blur-[40px]" />
 
       {/* Content */}
-      <div className="relative z-10 w-full h-screen flex flex-col items-center justify-center">
+      <div className="relative z-10 w-full h-full flex items-center justify-center px-4">
         {appState === "welcome" && (
           <div className="flex flex-col items-center justify-center gap-8">
             <h1 className="font-cormorant text-[20px] text-foreground text-center px-8 max-w-md">
