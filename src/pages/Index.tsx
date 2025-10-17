@@ -118,7 +118,7 @@ const Index = () => {
       {/* Content */}
       <div className="relative z-10 w-full h-screen flex flex-col items-center justify-center">
         {appState === "welcome" && (
-          <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col items-center justify-center gap-8">
             <h1 className="font-cormorant text-[20px] text-foreground text-center px-8 max-w-md">
               You're safe here, just breathe with me
             </h1>
@@ -129,9 +129,11 @@ const Index = () => {
             >
               Begin
             </Button>
-            <img src={huuLogo} alt="HUU" className="w-24 h-24 object-contain mt-16" />
           </div>
         )}
+        
+        {/* Fixed logo at bottom center */}
+        <img src={huuLogo} alt="HUU" className="fixed bottom-8 left-1/2 -translate-x-1/2 w-24 h-24 object-contain z-30" />
 
         {appState === "breathing" && (
           <>

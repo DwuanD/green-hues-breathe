@@ -40,14 +40,20 @@ export const BreathingAura = ({ phase, counter }: BreathingAuraProps) => {
           transition: `transform ${transitionDuration} cubic-bezier(0.4, 0, 0.2, 1)`,
         }}
       >
-        {/* Core glow */}
-        <div className="absolute inset-0 rounded-full bg-aura-core opacity-90 blur-2xl" />
+        {/* Innermost core - brightest */}
+        <div className="absolute inset-0 rounded-full bg-aura-core opacity-95 blur-xl" />
         
-        {/* Middle layer */}
-        <div className="absolute inset-0 rounded-full bg-aura-glow opacity-60 blur-3xl scale-110" />
+        {/* Core glow layer */}
+        <div className="absolute inset-0 rounded-full bg-aura-core opacity-80 blur-2xl scale-105" />
         
-        {/* Outer glow */}
-        <div className="absolute inset-0 rounded-full bg-primary opacity-30 blur-[80px] scale-125" />
+        {/* Middle transition layer */}
+        <div className="absolute inset-0 rounded-full bg-aura-glow opacity-70 blur-3xl scale-115" />
+        
+        {/* Outer glow layer */}
+        <div className="absolute inset-0 rounded-full bg-primary opacity-50 blur-[60px] scale-125" />
+        
+        {/* Outermost soft diffusion */}
+        <div className="absolute inset-0 rounded-full bg-primary opacity-25 blur-[100px] scale-150" />
       </div>
     </div>
   );
