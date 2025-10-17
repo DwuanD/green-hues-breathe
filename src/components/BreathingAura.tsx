@@ -40,20 +40,35 @@ export const BreathingAura = ({ phase, counter }: BreathingAuraProps) => {
           transition: `transform ${transitionDuration} cubic-bezier(0.4, 0, 0.2, 1)`,
         }}
       >
-        {/* Innermost core - brightest */}
-        <div className="absolute inset-0 rounded-full bg-aura-core opacity-95 blur-xl" />
+        {/* Layer 1 - Innermost core */}
+        <div className="absolute inset-0 rounded-full bg-aura-core opacity-95 blur-lg" />
         
-        {/* Core glow layer */}
-        <div className="absolute inset-0 rounded-full bg-aura-core opacity-80 blur-2xl scale-105" />
+        {/* Layer 2 */}
+        <div className="absolute inset-0 rounded-full bg-aura-core opacity-90 blur-xl scale-[1.05]" />
         
-        {/* Middle transition layer */}
-        <div className="absolute inset-0 rounded-full bg-aura-glow opacity-70 blur-3xl scale-115" />
+        {/* Layer 3 */}
+        <div className="absolute inset-0 rounded-full bg-aura-core opacity-85 blur-2xl scale-[1.1]" />
         
-        {/* Outer glow layer */}
-        <div className="absolute inset-0 rounded-full bg-primary opacity-50 blur-[60px] scale-125" />
+        {/* Layer 4 */}
+        <div className="absolute inset-0 rounded-full bg-aura-glow opacity-75 blur-[40px] scale-[1.15]" />
         
-        {/* Outermost soft diffusion */}
-        <div className="absolute inset-0 rounded-full bg-primary opacity-25 blur-[100px] scale-150" />
+        {/* Layer 5 */}
+        <div className="absolute inset-0 rounded-full bg-aura-glow opacity-65 blur-[50px] scale-[1.2]" />
+        
+        {/* Layer 6 */}
+        <div className="absolute inset-0 rounded-full bg-primary opacity-55 blur-[60px] scale-[1.25]" />
+        
+        {/* Layer 7 */}
+        <div className="absolute inset-0 rounded-full bg-primary opacity-45 blur-[70px] scale-[1.3]" />
+        
+        {/* Layer 8 */}
+        <div className="absolute inset-0 rounded-full bg-primary opacity-35 blur-[80px] scale-[1.35]" />
+        
+        {/* Layer 9 */}
+        <div className="absolute inset-0 rounded-full bg-primary opacity-25 blur-[90px] scale-[1.4]" />
+        
+        {/* Layer 10 - Outermost soft diffusion */}
+        <div className="absolute inset-0 rounded-full bg-primary opacity-15 blur-[100px] scale-[1.5]" />
       </div>
     </div>
   );

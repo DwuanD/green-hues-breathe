@@ -135,7 +135,7 @@ const Index = () => {
         {appState === "breathing" && (
           <>
             <BreathingAura phase={phase} counter={counter} />
-            <div className="relative z-20 mt-40">
+            <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-20">
               <BreathingText 
                 phase={phase} 
                 counter={counter} 
